@@ -1,11 +1,9 @@
 import React from 'react';
-import {View, FlatList, StyleSheet} from 'react-native';
+import {View, FlatList, Text, StyleSheet} from 'react-native';
 import {Card} from '../components';
 import {COLUMNS} from '../consts/Layout';
-import {increment} from '../../App';
 
 const CardGrid = ({data}) => {
-  console.log('DATA' + Object.keys(data));
   const renderCard = ({item}) => (
     <Card
       id={item.id}

@@ -6,10 +6,7 @@ const {Navigator, Screen} = createStackNavigator();
 
 const AppStack = () => {
   return (
-    <Navigator
-      initialRouteName="Home"
-      // screenOptions={{headerShown: false}}>
-    >
+    <Navigator initialRouteName="Home">
       <Screen
         name="Home"
         component={Home}

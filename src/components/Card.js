@@ -11,11 +11,7 @@ import generateRandomInt from '../utils/generateRandomInt';
 import COLOURS from '../consts/Colours';
 
 const Card = ({id, name, url, sales, count, increment}) => {
-  console.log(id + '' + count);
-
-  // console.log(
-  //   'GEND' + generateRandomInt(Object.keys(COLOURS.tileOverlays).length),
-  // );
+  console.log('ID' + id + ' ' + count);
   return (
     <TouchableWithoutFeedback onPress={() => increment(id)}>
       <View style={styles.card}>
@@ -23,14 +19,13 @@ const Card = ({id, name, url, sales, count, increment}) => {
           style={[
             styles.overlay,
             {
-              backgroundColor:
-                COLOURS.tileOverlays[
-                  generateRandomInt(Object.keys(COLOURS.tileOverlays).length)
-                ],
+              backgroundColor: Object.values(COLOURS.tileOverlays)[
+                generateRandomInt(Object.keys(COLOURS.tileOverlays).length)
+              ],
             },
           ]}>
           <Text>{name}</Text>
-          <Text>{sales}</Text>
+          <Text>{`${sales} sales`}</Text>
         </View>
         <Image style={{height: '100%', width: '100%'}} source={{uri: url}} />
       </View>
@@ -47,6 +42,7 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: 1,
     width: SCREEN_WIDTH / COLUMNS,
+    position: 'relative',
   },
   overlay: {
     position: 'absolute',

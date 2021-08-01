@@ -1,12 +1,25 @@
-import React from 'react'
-import { View, Text } from 'react-native'
+import React from 'react';
+import {View, Text, StyleSheet} from 'react-native';
+import {SCREEN_WIDTH, COLUMNS} from '../consts/Layout';
 
-const Card = () => {
-    return (
-        <View>
-            <Text>Card</Text>
-        </View>
-    )
-}
+const Card = ({label}) => {
+  return (
+    <View style={styles.card}>
+      <Text>{label}</Text>
+    </View>
+  );
+};
 
-export default Card
+const styles = StyleSheet.create({
+  card: {
+    backgroundColor: '#3232ff',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 100,
+    flex: 1,
+    margin: 1,
+    width: SCREEN_WIDTH / COLUMNS,
+  },
+});
+
+export default Card;

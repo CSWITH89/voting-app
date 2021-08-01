@@ -14,7 +14,7 @@ const AppStack = () => {
         name="Home"
         component={Home}
         // options={{title: 'Discover'}}
-         />
+      />
     </Navigator>
   );
 };

@@ -3,7 +3,7 @@ import MainNav from './src/navigation/MainNav';
 import {NavigationContainer} from '@react-navigation/native';
 import DummyData from './src/consts/DummyData';
 
-const DataContext = createContext();
+export const DataContext = createContext();
 
 const App = () => {
   const [gameData, setGameData] = useState(
@@ -12,8 +12,13 @@ const App = () => {
     }),
   );
 
+  const increment = id => {
+    const matchedID = gameData.filter(game => game.id === id);
+    setGameData([...gameData, ...matchedID]);
+  };
+
   return (
-    <DataContext.Provider value={{gameData, setGameData}}>
+    <DataContext.Provider value={{gameData, increment}}>
       <NavigationContainer>
         <MainNav></MainNav>
       </NavigationContainer>

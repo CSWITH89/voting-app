@@ -13,7 +13,7 @@ const AppStack = () => {
       <Screen
         name="Home"
         component={Home}
-        // options={{title: 'Discover'}}
+        options={{title: 'SUPER COUNTER 64'}}
       />
     </Navigator>
   );

@@ -3,7 +3,7 @@ import MainNav from './src/navigation/MainNav';
 import {NavigationContainer} from '@react-navigation/native';
 import DummyData from './src/consts/DummyData';
 
-export const DataContext = createContext();
+export const DataContext = createContext([]);
 
 const App = () => {
   const [gameData, setGameData] = useState(

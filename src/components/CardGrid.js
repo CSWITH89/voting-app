@@ -1,10 +1,11 @@
 import React from 'react';
-import {View, Text, FlatList, StyleSheet} from 'react-native';
+import {View, FlatList, StyleSheet} from 'react-native';
 import {Card} from '../components';
 import {COLUMNS} from '../consts/Layout';
 import {increment} from '../../App';
 
 const CardGrid = ({data}) => {
+  console.log('DATA' + Object.keys(data));
   const renderCard = ({item}) => (
     <Card
       id={item.id}
@@ -12,7 +13,7 @@ const CardGrid = ({data}) => {
       url={item.url}
       sales={item.sales}
       count={item.count}
-      increment={increment}></Card>
+      increment={data.increment}></Card>
   );
 
   const formatData = (dataList, numColumns) => {
@@ -29,7 +30,7 @@ const CardGrid = ({data}) => {
   return (
     <View style={styles.container}>
       <FlatList
-        data={formatData(data, COLUMNS)}
+        data={formatData(data.gameData)}
         renderItem={renderCard}
         keyExtractor={(item, index) => index.toString()}
         numColumns={COLUMNS}

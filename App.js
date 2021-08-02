@@ -13,8 +13,9 @@ const App = () => {
   );
 
   const increment = id => {
-    const matchedID = gameData.filter(game => game.id === id);
-    setGameData([...gameData, ...matchedID]);
+    let matchedID = gameData.find(game => game.id === id);
+    matchedID.count = matchedID.count + 1;
+    setGameData([...gameData, matchedID]);
   };
 
   return (

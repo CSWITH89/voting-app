@@ -1,4 +1,4 @@
-const opacityModifier = 0.6;
+const opacityModifier = 0.8;
 
 export default {
   tileOverlays: {

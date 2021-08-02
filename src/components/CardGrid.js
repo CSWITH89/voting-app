@@ -11,7 +11,8 @@ const CardGrid = ({data}) => {
       url={item.url}
       sales={item.sales}
       count={item.count}
-      increment={data.increment}></Card>
+      increment={data.increment}
+    />
   );
 
   const formatData = (dataList, numColumns) => {
@@ -28,7 +29,7 @@ const CardGrid = ({data}) => {
   return (
     <View style={styles.container}>
       <FlatList
-        data={formatData(data.gameData)}
+        data={data.gameData}
         renderItem={renderCard}
         keyExtractor={(item, index) => index.toString()}
         numColumns={COLUMNS}

@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, FlatList, Text, StyleSheet} from 'react-native';
+import {View, FlatList, StyleSheet} from 'react-native';
 import {Card} from '../components';
 import {COLUMNS} from '../consts/Layout';
 

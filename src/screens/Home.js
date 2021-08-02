@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import {View, Text, ScrollView, StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import {CardGrid} from '../components';
 import {DataContext} from '../../App';
 

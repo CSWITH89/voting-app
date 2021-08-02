@@ -11,7 +11,7 @@ import generateRandomInt from '../utils/generateRandomInt';
 import COLOURS from '../consts/Colours';
 import {Badge} from 'react-native-elements';
 
-const Card = ({id, name, url, sales, count, increment}) => {
+const Card = ({id, name, url, count, increment}) => {
   const [colour, setColour] = useState(null);
 
   colour
@@ -35,26 +35,15 @@ const Card = ({id, name, url, sales, count, increment}) => {
           <Badge
             value={count}
             status="success"
-            // size="large"
-            badgeStyle={{
-              height: 30,
-              width: 30,
-            }}
-            textStyle={{
-              fontSize: 16,
-              fontWeight: '700',
-            }}
-            containerStyle={{
-              position: 'absolute',
-              top: 10,
-              right: 10,
-            }}
+            badgeStyle={styles.badgeStyle}
+            textStyle={styles.textStyle}
+            containerStyle={styles.containerStyle}
           />
           <View style={styles.textContainer}>
             <Text style={styles.nameText}>{name}</Text>
           </View>
         </View>
-        <Image style={{height: '100%', width: '100%'}} source={{uri: url}} />
+        <Image style={styles.imageStyle} source={{uri: url}} />
       </View>
     </TouchableWithoutFeedback>
   );
@@ -87,6 +76,20 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '700',
   },
+  badgeStyle: {
+    height: 30,
+    width: 30,
+  },
+  textStyle: {
+    fontSize: 16,
+    fontWeight: '700',
+  },
+  containerStyle: {
+    position: 'absolute',
+    top: 10,
+    right: 10,
+  },
+  imageStyle: {height: '100%', width: '100%'},
 });
 
 export default Card;

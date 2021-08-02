@@ -15,7 +15,11 @@ const App = () => {
   const increment = id => {
     let matchedID = gameData.find(game => game.id === id);
     matchedID.count = matchedID.count + 1;
-    setGameData([...gameData, matchedID]);
+    setGameData(
+      [...gameData.filter(game => game.id !== id), matchedID].sort((a, b) => {
+        return parseInt(a.id) - parseInt(b.id);
+      }),
+    );
   };
 
   return (

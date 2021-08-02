@@ -9,29 +9,17 @@ const CardGrid = ({data}) => {
       id={item.id}
       name={item.name}
       url={item.url}
-      sales={item.sales}
       count={item.count}
       increment={data.increment}
     />
   );
-
-  const formatData = (dataList, numColumns) => {
-    const totalRows = Math.floor(dataList.length / numColumns);
-    let totalLastRow = dataList.length - totalRows * numColumns;
-
-    while (totalLastRow !== 0 && totalLastRow !== numColumns) {
-      dataList.push({id: 'blank', empty: true});
-      totalLastRow++;
-    }
-    return dataList;
-  };
 
   return (
     <View style={styles.container}>
       <FlatList
         data={data.gameData}
         renderItem={renderCard}
-        keyExtractor={(item, index) => index.toString()}
+        keyExtractor={item => item.id.toString()}
         numColumns={COLUMNS}
         showsHorizontalScrollIndicator={false}
       />
